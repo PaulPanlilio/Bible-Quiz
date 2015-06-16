@@ -1,30 +1,35 @@
-<!DOCTYPE HTML>
-<HTML>
+<!DOCTYPE html>
+<html>
 	<head>
-		<script src="./jquery-1.10.2.js"></script> 
+		<meta charset="UTF-8">
+		<title>Bible Quiz App</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
-		<title>Are You A Reality Pro?</title>
+		<script src="./jquery-1.10.2.js"></script> 
+		<div class="bibleQuiz">BIBLE QUIZ</div>
 	</head>
 	<body id="body">
-		<div id="logo">
-			<img src="./images/rtvLogoOrange.png">
+		<div class="testYourKnowledge">TEST YOUR BIBLE <br>KNOWLEDGE</div>
+		<!-- <div id="logo">
+			<img src="./images/rtvLogoOrange.png"> -->
 		</div>
 		<div id="topQuestion">
-			<h1 id="firstQuestion">Where was the location of the first Real World?</h1>
-			<h1 id="secondQuestion">Which season of The Real Housewives featured Camile Fraser?</h1>
-			<h1 id="thirdQuestion">How many couples on The Bachelor have tied the knot?</h1>
-			<h1 id="fourthQuestion">What did Kanye West and Kim Kardashian name their first child?</h1>
-			<h1 id="fifthQuestion">Who was the winner of the first season of Survivor?</h1>
+			<h1 id="firstQuestion">Who's the oldest person who lived on earth?</h1>
+			<h1 id="secondQuestion">Paul says Christ died for the what?</h1>
+			<h1 id="thirdQuestion">Paul says sin is not imputed when there is no what?</h1>
+			<h1 id="fourthQuestion">Paul equates Christ to who when he says that all were made righteous (by Christ) as all were made sinners (by who?)?</h1>
+			<h1 id="fifthQuestion">Paul says we are symbolically buried with Christ through what?</h1>
 		</div>
 		<div id="centerArea">
-			<img id="orangeTv" src="./images/tvOrange.png">
-			<div id="introBanner" class="banner">
+			<!--<img id="orangeTv" src="./images/tvOrange.png"> -->
+
+			<!-- <div id="introBanner" class="banner">
 				<h3>Welcome to</h3>
 				<h2>THE REALITY TV QUIZ</h2>
-			</div>
-			<div id="realworldBanner" class="banner">
+			</div> -->
+			
+			<!-- <div id="realworldBanner" class="banner">
 				<img src="./images/mtvLogo.png">
-			</div>
+			</div> -->
 			<div id="rhBanner" class="banner">
 				<img src="./images/bravoLogo.png">
 			</div>
@@ -38,25 +43,28 @@
 				<img src="./images/cbsLogo.png">
 			</div>
 			<div id="getStarted">
-				<h3 id="intro">How much do you know about reality TV?<br>Take the quiz & find out</h3>
+				<h3 id="intro">How much do you really know your Bible?<br> 
+				Take the quiz & find out</h3>
 				<input type="submit" value="Get Started" class="button" id="start" onkeydown="if(event.keyCode==13)$('#start').trigger('click');">
 			</div>
 			<div class="answerPopUp" id="correct">	
 				<h1>Correct!</h1>
-				<h2>You got it right!</h2>
+				<!-- <h2>You got it right!</h2> -->
 				<input type="submit" value="Continue" class="continue">
 			</div>
 			<div class="answerPopUp" id="incorrect">
-				<h1>Sorry</h1>
+				<!-- <h1>Sorry</h1> -->
 				<h2>Wrong Answer</h2>
 				<input type="submit" value="Continue" class="continue">
 			</div>
 			<div id="endPage">
-				<h1>Congratulations on completing the reality tv quiz!</h1>
+				<!--<h1>Congratulations on completing the reality tv quiz!</h1> -->
 				<h2 id="goodbye"></h2>
 				<input onclick="reloadPage()" value="Try Again!" class="button" id="retake">
 			</div>
 		</div>
+
+		
 		<div id="progress">
 			<div class="progressLight unAnswered" id="progressLamp1">
 				<img  src="./images/q1.png">
@@ -77,94 +85,100 @@
 				<p id="progressUpdate">0%<br>Complete</p>
 			</div>
 		</div>
+
+		
+
 		<div class="answers" id="q1">
-			<div class="answer" name="New York">
-				<h3>New York</h3>
-			</div>
-			<div class="answer" name="London">
+			<div class="answer" name="Methuselah">
 				<a href="#">
-					<h3>London</h3>
+					<h3>Methuselah</h3>
 				</a>
 			</div>
-			<div class="answer" name="Boston">
+			<div class="answer" name="Eve">
 				<a href="#">
-					<h3>Boston</h3>
+					<h3>Eve</h3>
+				</a>
+			</div>
+			<div class="answer" name="Adam">
+				<a href="#">
+					<h3>Adam</h3>
 				</a>
 			</div>
 		</div>
 		<div class="answers" id="q2">
-			<div class="answer" name="Atlanta">
+			<div class="answer" name="The holy">
 				<a href="#">
-				<h3>Atlanta</h3>
+				<h3>The holy</h3>
 				</a>
 			</div>
-			<div class="answer" name="Orange County">
+			<div class="answer" name="The righteous">
 				<a href="#">
-					<h3>Orange County</h3>
+					<h3>The righteous</h3>
 				</a>
 			</div>
-			<div class="answer" name="Beverly Hills">
+			<div class="answer" name="The ungodly">
 				<a href="#">
-					<h3>Beverly Hills</h3>
+					<h3>The ungodly</h3>
 				</a>
 			</div>
 		</div>
 		<div class="answers" id="q3">
-			<div class="answer" name="3">
+			<div class="answer" name="Law">
 				<a href="#">
-				<h3>3</h3>
+				<h3>Law</h3>
 				</a>
 			</div>
-			<div class="answer" name="5">
+			<div class="answer" name="Prayer">
 				<a href="#">
-					<h3>5</h3>
+					<h3>Prayer</h3>
 				</a>
 			</div>
-			<div class="answer" name="10">
+			<div class="answer" name="Forgiveness">
 				<a href="#">
-					<h3>10</h3>
+					<h3>Forgiveness</h3>
 				</a>
 			</div>
 		</div>
 		<div class="answers" id="q4">
-			<div class="answer" name="Apple">
+			<div class="answer" name="Satan">
 				<a href="#">
-				<h3>Apple</h3>
+				<h3>Satan</h3>
 				</a>
 			</div>
-			<div class="answer" name="North">
+			<div class="answer" name="Adam">
 				<a href="#">
-					<h3>North</h3>
+					<h3>Adam</h3>
 				</a>
 			</div>
-			<div class="answer" name="Blue">
+			<div class="answer" name="Eve">
 				<a href="#">
-					<h3>Blue</h3>
+					<h3>Eve</h3>
 				</a>
 			</div>
 		</div>
 		<div class="answers" id="q5">
-			<div class="answer" name="Richard">
+			<div class="answer" name="Baptism">
 				<a href="#">
-				<h3>Richard</h3>
+				<h3>Baptism</h3>
 				</a>
 			</div>
-			<div class="answer" name="John">
+			<div class="answer" name="Marriage">
 				<a href="#">
-					<h3>John</h3>
+					<h3>Marriage</h3>
 				</a>
 			</div>
-			<div class="answer" name="Rebecca">
+			<div class="answer" name="Funeral">
 				<a href="#">
-					<h3>Rebecca</h3>
+					<h3>Funeral</h3>
 				</a>
 			</div>
 		</div>
-		<div id="submitButton">
+		<div id="submitButton">Submit
 			<!---<a href="#">-->
-			<img id="arrow" src="./images/arrows.png">
+			<!--
+			<img id="arrow" src="./images/arrows.png"> -->
 			<!---</a>-->
 		</div>
 	</body>
 	<script src="application.js"></script>
-</HTML>
+</html>

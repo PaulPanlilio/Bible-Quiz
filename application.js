@@ -1,24 +1,15 @@
-//This method makes the banner in TV fades in after the page loads
-
 $('#introBanner').delay(500).fadeIn(1000);
-
-//When "Get Started" button is clicked, Banner and getStarted sections fade away & the first question, q1 answers and progress bar (on right) fade in
 
 $('#start').on('click', function(){
 	  console.log( "start button functions");
-	 // var getStarted = $('#getStarted');
-	  //var banner = $('#banner');
+	 
 	  $('#getStarted').hide();
 	  $('#introBanner').hide();
 	 q1Appear();
 	  
 });
 
-//TO DO 1: Not working! - If user clicks return on landing page, start button will be triggered
-
 $('#start').keydown(function(){
-	 // var getStarted = $('#getStarted');
-	  //var banner = $('#banner');
 	  if (event.which == 13){
 	  console.log( "keypress button functions");
 	  $('#getStarted').hide();
@@ -27,15 +18,11 @@ $('#start').keydown(function(){
 	  }
 });
 
-//When user clicks on an answer, ".selectedAnswer" class is added to that answer. If the user changes the answer they've selected (before submiting), the class is removed from the previous answer and added to the newly selected answre
-
 $(".answer").on('click', function(){
 	console.dir(this);
 	$('.answer').removeClass('selectedAnswer');
 	$(this).addClass('selectedAnswer');
 });
-
-/*clearScreen() and appear() functions clear the screen, serve up the next answers, updates the progressLamp (rightAnswer / wrongAnswer) and currentQuestion classes, when user clicks on submit and continue buttons */ 
 
 function clearScreen() {
 		$('#topQuestion').css({'opacity':'0'});
@@ -153,75 +140,73 @@ function q5Clear(){
 		$('.answer').removeClass('selectedAnswer');
 };
 
-//checkAnswer() function checks whether the selected answer for each question is correct. The function runs when user clicks submit for each answer
-
 function checkAnswer(question, answer){
 	console.log("in checkAnswer " + question + " " + answer);
 
-	if (question == "q1" && answer == "New York"){
+	if (question == "q1" && answer == "Methuselah"){
 		console.log("You're right!");
 		clearScreen();
 		q1Clear();
 		$('#correct').css({'display':'inline-block'});
 		$('#progressLamp1').addClass('rightAnswer');
 	}
-	else if (question == "q1" && answer !== "New York") {
+	else if (question == "q1" && answer !== "Methuselah") {
 		console.log("Answer 1 - wrong");
 		clearScreen();
 		q1Clear();
 		$('#incorrect').css({'display':'inline-block'});
 		$('#progressLamp1').addClass('wrongAnswer');
 	}
-	else if (question == "q2" && answer == "Beverly Hills") {
+	else if (question == "q2" && answer == "The ungodly") {
 		console.log("Answer 2 - You're right!");
 		clearScreen();
 		q2Clear();
 		$('#correct').css({'display':'inline-block'});
 		$('#progressLamp2').addClass('rightAnswer');
 	}
-	else if (question == "q2" && answer !== "Beverly Hills"){
+	else if (question == "q2" && answer !== "The ungodly"){
 		console.log("Answer 2 - wrong!");
 		clearScreen();
 		q2Clear();
 		$('#incorrect').css({'display':'inline-block'});
 		$('#progressLamp2').addClass('wrongAnswer');
 	}
-	else if (question == "q3" && answer == "3") {
+	else if (question == "q3" && answer == "Law") {
 		console.log("Answer 3 - You're right!");
 		clearScreen();
 		q3Clear();
 		$('#correct').css({'display':'inline-block'});
 		$('#progressLamp3').addClass('rightAnswer');
 	}
-	else if (question == "q3" && answer !== "3"){
+	else if (question == "q3" && answer !== "Law"){
 		console.log("Answer 3 - wrong!");
 		clearScreen();
 		q3Clear();
 		$('#incorrect').css({'display':'inline-block'});
 		$('#progressLamp3').addClass('wrongAnswer');
 	}
-	else if (question == "q4" && answer == "North") {
+	else if (question == "q4" && answer == "Adam") {
 		console.log("Answer 4 - You're right!");
 		clearScreen();
 		q4Clear();
 		$('#correct').css({'display':'inline-block'});
 		$('#progressLamp4').addClass('rightAnswer');
 	}
-	else if (question == "q4" && answer !== "North"){
+	else if (question == "q4" && answer !== "Adam"){
 		console.log("Answer 4 - wrong!");
 		clearScreen();
 		q4Clear();
 		$('#incorrect').css({'display':'inline-block'});
 		$('#progressLamp4').addClass('wrongAnswer');
 	}
-	else if (question == "q5" && answer == "Richard") {
+	else if (question == "q5" && answer == "Baptism") {
 		console.log("Answer 5 - You're right!");
 		clearScreen();
 		q5Clear();
 		$('#correct').css({'display':'inline-block'});
 		$('#progressLamp5').addClass('rightAnswer');
 	}
-	else if (question == "q5" && answer !== "Richard"){
+	else if (question == "q5" && answer !== "Baptism"){
 		console.log("Answer 5 - wrong!");
 		clearScreen();
 		q5Clear();
@@ -233,8 +218,6 @@ function checkAnswer(question, answer){
 	}
 
 };
-
-//When user submits their answer to a question, this function uses checkAnswer to check whether the answer was right or wrong and produce the appropriate next step
 
 $("#submitButton").on('click', function(){
 	console.log("in submit");
@@ -249,15 +232,13 @@ $("#submitButton").on('click', function(){
 	checkAnswer(questionNumber, questionAnswer);
 });
 
-//When a user clicks continue in the right/wrong pop-up that appears after they've answered a question, this function contains if statements that serve up the next answer depending .unAnswered.legnth
-
 $(".continue").click(function(){
 	$('#incorrect').css({'display':'none'});
 	$('#correct').css({'display':'none'});
 
 	var progressPercent = ((5 -($('.unAnswered').length))/5)*100;
 	var progressUpdate = "<br>" + progressPercent + "% Complete";
-	var goodbyeMessage = "You got " + (5 - $('.wrongAnswer').length) + " out of 5 questions right.<br>To retake the quiz, just click below."
+	var goodbyeMessage = "You got " + (5 - $('.wrongAnswer').length) + " out of 5 questions right."
 
 	$('#progressUpdate').empty().append(progressUpdate);
 
@@ -277,7 +258,7 @@ $(".continue").click(function(){
 	}
 
 	else{
-		//These methods load up the endPage when the user has completed the quiz
+
 		$('#body').css({'background-color':'#F3F0F0'});
 		$('#orangeTv').hide();
 		$('#progressMeter').hide();
@@ -287,8 +268,6 @@ $(".continue").click(function(){
 	};
 
 });
-
-//This function makes the page reload when the user clicks the "Try Again!"
 
 function reloadPage(){
 	location.reload();

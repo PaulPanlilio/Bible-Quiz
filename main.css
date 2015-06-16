@@ -1,20 +1,64 @@
-/*global settings*/
-
 body {
-	background-color: #15262A;
+	background-color: white;
 	font-family: Arial;
-	width: 1300px;
-	height: 700px;
+	padding: 140.5em 0;
+	padding-bottom: 20em;
+	padding-top: 20em;
+	width: 500px;
+	height: 580px;
+	margin: auto;
+	margin-top: 20px;
+	padding: 1%;
+	padding-bottom: 50px;
+	border: 2px solid black;
+    background-color: #191919
+}
+
+.bibleQuiz {
+	margin-left: auto;
+	margin-right: auto;	
+	text-align: center;
+	margin-top: 15px;
+  	letter-spacing: 30px;
+  	font-size: 30px;
+  	font-weight: 400px;
+  	font-family: 'Times New Roman', Arial, sans-serif;
+  	margin-left: 50px;
+  	margin-right: auto;
+  	text-align: center;
+  	text-shadow: 2px 2px 0px black;
+  	color: #00CC00;
 }
 
 h2 {
 	font-size: 28px;
 	text-transform: uppercase;
+	padding-top: 15px;
 }
 
 h3 {
 	font-size: 18px;
 	text-transform: uppercase;
+}
+
+
+.testYourKnowledge {
+  	width: 220px;
+  	height: 80px;
+  	margin-top: 20px;
+  	margin-right: -17px;
+  	background: white;
+  	border-radius: 6px;
+  	text-align: right;
+  	color: white;
+  	font-family: 'Times New Roman', Arial, sans-serif;
+  	font-size: 20px;
+  	color: black;
+  	border: 1px solid black;
+  	letter-spacing: 3px;
+  	line-height: 30px;
+  	float: right;
+  	background-color: #B22424;
 }
 
 /*Header*/
@@ -29,6 +73,8 @@ h3 {
 	top: -20px;
 	left: 25px;
 	position: relative;
+	display: none;
+
 }
 
 /*This top question area is hidden @ start and end. It only appears when someone has pressed the Start button and is asking questions*/
@@ -38,14 +84,13 @@ h3 {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	top: -25px;
+	top: 150px;
 	padding-left: 15px;
 	border-radius: 10px;
-	background-color: #445155;
 	/*color: #D14334;*/
 	float: center;
 	height: 100px;
-	opacity: 0;
+  	padding-bottom: 30px;
 	/*display: none;*/
 }
 
@@ -55,7 +100,10 @@ h3 {
 	/*opacity: 1;*/
 	text-align: center;
 	padding-top: 35px;
+	padding-bottom: 35px;
 	position: relative;
+	float: left;
+	margin-top: -115px;
 	display: none;
 }
 
@@ -99,6 +147,7 @@ h3 {
 	color: #028F76;
 	display: none;
 	/*opacity: .75;*/
+	display: none;
 }
 
 .banner h1 {
@@ -130,40 +179,48 @@ h3 {
 	float: center;
 	margin-left: 40px;
 	margin-top: -175px;
+	display: none;
 }
 
 #rhBanner img{
 	width: 150px;
+	display: none;
 }
 
 #bachelorBanner {
 	float: center;
 	margin-left: 40px;
 	margin-top: -150px;
+	display: none;
 }
 
 #bachelorBanner img{
 	width: 150px;
+	display: none;
 }
 
 #kardashiansBanner {
 	float: center;
 	margin-left: 40px;
 	margin-top: -138px;
+	display: none;
 }
 
 #kardashiansBanner img{
 	width: 150px;
+	display: none;
 }
 
 #survivorBanner {
 	float: center;
 	margin-left: 52px;
 	margin-top: -180px;
+	display: none;
 }
 
 #survivorBanner img{
 	width: 120px;
+	display: none;
 }
 
 /*only appears on home view*/
@@ -185,10 +242,12 @@ h3 {
 	line-height: 1.5;
 	float: center;
 	font-weight: thin;
+	float: left;
+  	margin-left: -140px;
 }
 
 .button {
-	background-color: #445155;
+	background-color: #14A714;
 	font-size: 18px;
 	text-transform: uppercase;
 	color: white;
@@ -199,6 +258,9 @@ h3 {
 	margin-left: 145px;
 	border: none;
 	width: 200px;
+	margin-left: -320px;
+    margin-right: auto;
+    margin-top: 150px;
 }
 
 /*#start {
@@ -220,7 +282,7 @@ h3 {
 }
 
 #start:hover {
-	background-color: #028F76;
+	background-color: #445155;
 }
 
 #start:active {
@@ -230,21 +292,24 @@ h3 {
 /*popup message when user has submited their answer - correct or incorrect*/
 
 .answerPopUp {
-	background-color: white;
+	background-color: #14A714;
 	width: 70%;
 	float: center;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	z-index: 5;
-	color: #DA695D;
+	color: black;
 	display: none;
 	top: 50px;
 	height: 250px;
+	width: 260px;
 	border-radius: 15px;
 	text-align: center;
-	padding: 100px;
-	opacity: .95;
+	padding-top: 15px;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  	margin-left: -37px;
 }
 
 .continue {
@@ -269,6 +334,7 @@ h3 {
 
 #incorrect {
 	display: inline-block;
+
 	display: none;
 }
 
@@ -278,7 +344,7 @@ h3 {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	color: #DA695D;
+	color: black;
 	top: 100px;
 	height: 350px;
 	text-align: center;
@@ -290,22 +356,24 @@ h3 {
 	font-size: 24px;
 	text-transform: none;
 	line-height: 1.5;
-}
+	margin-top: -100px;
+}	
 
 #retake {
 	float: center;
-	margin-left: auto;
+	margin-left: -55px;
 	margin-right: auto;
 	margin-top: 50px;
-	background-color: #028F76;
+	background-color: #14A714;
 	padding: 15px;
 	width: 300px;
 }
 
 #retake:hover {
-	background-color: #DA695D;
+	background-color: #445155;
 }
 /*progress section on right - hidden @ start and end */
+
 
 #progress {
 	position: relative;
@@ -318,7 +386,8 @@ h3 {
 	display: none;
 	float: right;
 	top: -320px;
-}
+	display: none;
+} 
 
 /*background should be grey when not started, orange when it's currently being done and green when completed*/
 
@@ -338,7 +407,7 @@ h3 {
 	text-align: baseline;
 	opacity: 1;
 	position: relative;
-
+	display: none;
 }
 
 .unAnswered {
@@ -377,31 +446,32 @@ h3 {
 	position: relative;
 	font-size: 16px;
 	text-align: baseline;
+	display: none;
 }
 
 #progressMeter p{
 	border: 10px;
 	margin-top: 20px;
 	line-height: 1.5;
+	display: none;
 }
 /*Section where user clicks on the answer to each question*/
 
 .answers {
 	float: center;
-	width: 80%;
+	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50px;
+	margin-top: 190px;
 	display: none;
-	padding-left: 360px;
-	padding-right: 150px;
-	min-width: 1040px;
+	min-width: 367px;
+	min-height: 262px;
 }
 
 .answer {
 	display: inline-block;
 	width: 130px;
-	height: 130px;
+	height: 40px;
 	background: #028F76;
 	-moz-border-radius: 65px;
 	-webkit-border-radius: 65px;
@@ -410,6 +480,21 @@ h3 {
 	text-align: center;
 	margin: 10px;
 	text-align: baseline;
+	width: 365px;
+	background: white;
+  	border-radius: 6px;
+  	text-align: center;
+  	font-family: 'Brush script std', Arial, sans-serif;
+  	font-size: 22px;
+  	color: white;
+  	margin: 0 auto 5px;
+  	margin-left: 500px;
+  	border: 1px solid black;
+  	text-shadow: 1px 1px 1px #000;
+  	margin-left: auto;
+  	margin-right: auto;
+  	line-height: 40px;
+  	background-color: #14A714;
 }
 
 .answer:hover{
@@ -428,16 +513,37 @@ h3 {
 
 .answer h3 {
 	width: 110px;
+	height: 40px;
 	float: center;
 	position: relative;
 	text-align: center;
 	font-size: 16px;
 	font-weight: normal;
-	margin-top: 40px;
+	margin-top: -5px;
 	text-transform: none;
 	padding: 10px;
 	/*margin-left: 20px;*/
 }
+/*
+	width: 365px;
+  	height: 40px;
+  	background: white;
+  	border-radius: 6px;
+  	text-align: center;
+  	font-family: 'Brush script std', Arial, sans-serif;
+  	font-size: 22px;
+  	color: white;
+  	margin: 0 auto 5px;
+  	margin-left: 500px;
+  	border: 1px solid black;
+  	text-shadow: 1px 1px 1px #000;
+  	margin-left:  -295px;
+  	margin-right: auto;
+  	line-height: 40px;
+  	background-color: #14A714;
+  	display: none;
+}
+*/
 
 .selectedAnswer {
 	background-color: #445155;
@@ -445,17 +551,19 @@ h3 {
 
 #submitButton{
 	display: inline-block;
-	width: 120px;
-	height: 120px;
+	width: 365px;
+	height: 40px;
 	background: #445155;
-	-moz-border-radius: 60px;
+	-moz-border-radius: 6px;
 	-webkit-border-radius: 60px;
-	border-radius: 60px;
+	border-radius: 6px;
 	color: white;
 	text-align: center;
-	margin: -135px 0px 0px 835px;
+	margin: -120px 0px 0px 67px;
 	text-align: baseline;
 	position: relative;
+	line-height: 40px;
+
 	/*min-width: 900px;*/
 	display: none;
 }
